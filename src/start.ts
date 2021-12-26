@@ -3,6 +3,11 @@ import { getSpotifyApi } from "./utils/spotifyProvider";
 export const start = async (interval = 5000) => {
   const spotifyApi = getSpotifyApi();
 
+  if (!spotifyApi.getRefreshToken()) {
+    console.error("You need to login before using this app.");
+    return;
+  }
+
   setInterval(async () => {
     const {
       body: { access_token },
