@@ -1,4 +1,5 @@
 import express from "express";
+import open from "open";
 import { getAuthUrl, getSpotifyApi } from "./utils/spotifyApiProvider";
 import { Cred } from "./utils/types";
 import { setUserData } from "./utils/userData";
@@ -22,6 +23,6 @@ export const login = async (cred: Cred) => {
 
   app.listen(3000, () => {
     const url = getAuthUrl(cred);
-    console.log(url);
+    open(url);
   });
 };
