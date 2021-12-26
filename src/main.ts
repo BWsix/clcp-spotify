@@ -28,4 +28,9 @@ yargs
       login({ clientId, clientSecret });
     },
   )
+  .command("start", "Start the app.", {}, async () => {
+    const { start } = await import("./start");
+
+    start();
+  })
   .help().argv;
