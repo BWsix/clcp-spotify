@@ -1,9 +1,5 @@
 import SpotifyWebApi from "spotify-web-api-node";
-
-export type Cred = {
-  clientId: string;
-  clientSecret: string;
-};
+import { Cred } from "./types";
 
 const redirectUri = "http://localhost:3000/callback/";
 

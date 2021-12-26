@@ -1,5 +1,6 @@
 import express from "express";
-import { Cred, getAuthUrl, getSpotifyApi } from "./utils/spotifyApiProvider";
+import { getAuthUrl, getSpotifyApi } from "./utils/spotifyApiProvider";
+import { Cred } from "./utils/types";
 import { setUserData } from "./utils/userData";
 
 const app = express();
