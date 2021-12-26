@@ -1,6 +1,10 @@
-import { Cred } from "./spotifyApiProvider";
 import fs from "fs-jetpack";
+import { ExtendedCred } from "./types";
 
-export const setUserData = (cred: Cred & { refreshToken: string }) => {
+export const setUserData = (cred: ExtendedCred) => {
   fs.write("user.json", cred);
+};
+
+export const getUserData = () => {
+  return fs.read("user.json", "json") as ExtendedCred;
 };
