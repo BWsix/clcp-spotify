@@ -1,8 +1,16 @@
 {
-  "name": "bob",
+  "name": "clcp-spotify-dev",
   "version": "0.0.0",
-  "description": "bob",
+  "description": "This is the tester project of what I'm going to build on the `clcp community day`.",
+  "keywords": [
+    "clcp",
+    "spotify api",
+    "bob"
+  ],
   "bin": "build/src/main.js",
+  "files": [
+    "build/*"
+  ],
   "scripts": {
     "start": "node build/src/main.js",
     "dev": "nodemon build/src/main.js",
