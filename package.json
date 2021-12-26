@@ -26,6 +26,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.2",
+    "fs-jetpack": "^4.3.0",
     "spotify-web-api-node": "^5.0.2",
     "tslib": "~2.3.1"
   },

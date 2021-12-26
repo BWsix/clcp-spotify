@@ -1,11 +1,21 @@
 import express from "express";
-import { Cred, getAuthURL } from "./utils/spotifyProvider";
+import { getAuthURL, getSpotifyApi } from "./utils/spotifyProvider";
+import { Cred } from "./utils/types";
+import { setUser } from "./utils/userData";
 
 const app = express();
 
 export const login = (cred: Cred) => {
-  app.get("/callback", ({ query }, res) => {
-    console.log(query.code);
+  const spotifyApi = getSpotifyApi(cred);
+
+  app.get("/callback", async ({ query }, res) => {
+    const code = query.code as string;
+
+    const {
+      body: { refresh_token },
+    } = await spotifyApi.authorizationCodeGrant(code);
+
+    setUser({ ...cred, refreshToken: refresh_token });
 
     res.send("You can close this tab now.");
 

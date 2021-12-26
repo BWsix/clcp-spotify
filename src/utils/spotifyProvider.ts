@@ -1,9 +1,5 @@
 import SpotifyWebApi from "spotify-web-api-node";
-
-export type Cred = {
-  clientId: string;
-  clientSecret: string;
-};
+import { Cred } from "./types";
 
 export const getSpotifyApi = (cred: Cred) => {
   const spotifyApi = new SpotifyWebApi({
