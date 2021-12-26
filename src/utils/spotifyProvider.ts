@@ -1,7 +1,12 @@
 import SpotifyWebApi from "spotify-web-api-node";
 import { Cred } from "./types";
+import { getUser } from "./userData";
 
-export const getSpotifyApi = (cred: Cred) => {
+export const getSpotifyApi = (cred?: Cred) => {
+  if (!cred) {
+    cred = getUser();
+  }
+
   const spotifyApi = new SpotifyWebApi({
     ...cred,
     redirectUri: "http://localhost:3000/callback",
