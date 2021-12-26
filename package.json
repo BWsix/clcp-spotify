@@ -1,6 +1,6 @@
 {
   "name": "clcp-spotify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CLCP",
   "bin": "build/src/main.js",
   "files": [
