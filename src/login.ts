@@ -1,4 +1,5 @@
 import express from "express";
+import open from "open";
 import { getAuthURL, getSpotifyApi } from "./utils/spotifyProvider";
 import { Cred } from "./utils/types";
 import { setUser } from "./utils/userData";
@@ -24,6 +25,6 @@ export const login = (cred: Cred) => {
 
   app.listen(3000, () => {
     const url = getAuthURL(cred);
-    console.log(url);
+    open(url);
   });
 };
